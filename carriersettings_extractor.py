@@ -243,11 +243,66 @@ with open('apns-full-conf.xml', 'w', encoding='utf-8') as f:
                     'string-array',
                 )
                 carrier_config_subelement.set('name', config.key)
+                cleanedlist = getattr(config, value_type).item
+                if "com.android.omadm.service" in cleanedlist:
+                    cleanedlist.remove("com.android.omadm.service")
+
+                if "com.android.sdm.plugins.diagmon" in cleanedlist:
+                    cleanedlist.remove("com.android.sdm.plugins.diagmon")
+
+                if "com.android.sdm.plugins.dcmo" in cleanedlist:
+                    cleanedlist.remove("com.android.sdm.plugins.dcmo")
+
+                if "com.android.sdm.plugins.connmo" in cleanedlist:
+                    cleanedlist.remove("com.android.sdm.plugins.connmo")
+
+                if "com.android.sdm.plugins.usccdm" in cleanedlist:
+                    cleanedlist.remove("com.android.sdm.plugins.usccdm")
+
+                if "com.google.android.hiddenmenu" in cleanedlist:
+                    cleanedlist.remove("com.google.android.hiddenmenu")
+
+                if "com.google.android.carrier.authdialog" in cleanedlist:
+                    cleanedlist.remove("com.google.android.carrier.authdialog")
+
+                if "com.google.omadm.trigger" in cleanedlist:
+                    cleanedlist.remove("com.google.omadm.trigger")
+
+                if "com.verizon.llkagent" in cleanedlist:
+                    cleanedlist.remove("com.verizon.llkagent")
+
+                if "com.verizon.obdm" in cleanedlist:
+                    cleanedlist.remove("com.verizon.obdm")
+
+                if "com.verizon.obdm_permissions" in cleanedlist:
+                    cleanedlist.remove("com.verizon.obdm_permissions")
+
+                if "com.verizon.services" in cleanedlist:
+                    cleanedlist.remove("com.verizon.services")
+
+                if "com.verizon.mips.services" in cleanedlist:
+                    cleanedlist.remove("com.verizon.mips.services")
+
+                if "com.vzw.apnlib" in cleanedlist:
+                    cleanedlist.remove("com.vzw.apnlib")
+
+                if "com.android.vzwomatrigger" in cleanedlist:
+                    cleanedlist.remove("com.android.vzwomatrigger")
+
+                if "com.customermobile.preload.vzw" in cleanedlist:
+                    cleanedlist.remove("com.customermobile.preload.vzw")
+
+                if "com.htc.omadm.trigger" in cleanedlist:
+                    cleanedlist.remove("com.htc.omadm.trigger")
+
+                if "com.android.sdm.plugins.sprintdm" in cleanedlist:
+                    cleanedlist.remove("com.android.sdm.plugins.sprintdm")
+
                 carrier_config_subelement.set(
                     'num',
-                    str(len(getattr(config, value_type).item)),
+                    str(len(cleanedlist))
                 )
-                for value in getattr(config, value_type).item:
+                for value in cleanedlist:
                     carrier_config_item = ET.SubElement(
                         carrier_config_subelement,
                         'item',

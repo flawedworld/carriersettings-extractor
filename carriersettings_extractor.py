@@ -7,6 +7,7 @@ import os.path
 import sys
 from xml.etree import ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
+from subprocess import call
 
 from carriersettings_pb2 import CarrierList, CarrierSettings, \
     MultiCarrierSettings
@@ -332,6 +333,9 @@ with open('apns-full-conf.xml', 'w', encoding='utf-8') as f:
 indent(carrier_config_root)
 carrier_config_tree = ET.ElementTree(carrier_config_root)
 carrier_config_tree.write('vendor.xml', encoding='utf-8', xml_declaration=True)
+
+# Clean up
+call("./cleanup.sh")
 
 # Test XML parsing.
 ET.parse('apns-full-conf.xml')

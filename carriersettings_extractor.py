@@ -299,6 +299,12 @@ with open('apns-full-conf.xml', 'w', encoding='utf-8') as f:
                 if "com.android.sdm.plugins.sprintdm" in cleanedlist:
                     cleanedlist.remove("com.android.sdm.plugins.sprintdm")
 
+                if "com.google.android.carriersetup/.VzwActivationReceiver:com.android.internal.telephony.CARRIER_SIGNAL_PCO_VALUE,com.android.internal.telephony.CARRIER_SIGNAL_REDIRECTED,com.android.internal.telephony.CARRIER_SIGNAL_RESET" in cleanedlist:
+                    cleanedlist.remove("com.google.android.carriersetup/.VzwActivationReceiver:com.android.internal.telephony.CARRIER_SIGNAL_PCO_VALUE,com.android.internal.telephony.CARRIER_SIGNAL_REDIRECTED,com.android.internal.telephony.CARRIER_SIGNAL_RESET")
+
+                if "com.google.android.carriersetup/.VzwActivationReceiver:com.android.internal.telephony.CARRIER_SIGNAL_PCO_VALUE" in cleanedlist:
+                    cleanedlist.remove("com.google.android.carriersetup/.VzwActivationReceiver:com.android.internal.telephony.CARRIER_SIGNAL_PCO_VALUE")
+
                 carrier_config_subelement.set(
                     'num',
                     str(len(cleanedlist))

@@ -33,6 +33,7 @@ Convert `CarrierSettings/*.pb` to `apns-full-conf.xml` and `vendor.xml` (see bel
     ./carriersettings_extractor.py CarrierSettings
     
 Copy apns-full-conf.xml to the device tree (device/google/$DEVICE)
+
 To clean up the vendor overlays run this command
 
     bash generate-aosp-overlays.sh

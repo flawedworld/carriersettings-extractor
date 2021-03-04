@@ -41,7 +41,7 @@ This command assumes that the other steps were followed exactly as they were wri
 
 Copy vendor.xml to the device tree overlays dir, example device/google/$DEVICE/overlay/packages/apps/CarrierConfig/res/xml/vendor.xml
 
-In some cases that path may not be the right one, use device/google/\<device-family-common-name\>/$DEVICE/overlay/packages/apps/CarrierConfig/res/xml/vendor.xml and an example is [here](https://github.com/GrapheneOS/device_google_redfin/commit/c82eb636cd063066199b920dca0a328c915adfa3https://github.com/GrapheneOS/device_google_redfin/commit/c82eb636cd063066199b920dca0a328c915adfa3)
+In some cases that path may not be the right one, use device/google/\<device-family-common-name\>/$DEVICE/overlay/packages/apps/CarrierConfig/res/xml/vendor.xml and an example is [here](https://github.com/GrapheneOS/device_google_redfin/commit/c82eb636cd063066199b920dca0a328c915adfa3)
 
 ## Protobuf definitions
 

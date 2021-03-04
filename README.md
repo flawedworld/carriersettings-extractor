@@ -34,12 +34,15 @@ Convert `CarrierSettings/*.pb` to `apns-full-conf.xml` and `vendor.xml` (see bel
     
 Copy apns-full-conf.xml to the device tree (device/google/$DEVICE)
 To clean up the vendor overlays run this command
+
     ```
     bash generate-aosp-overlays.sh
     ```
+    
 This command assumes that the other steps were followed exactly as they were written here. The cleanup script will fail unless the factory image and carrierlist are already downloaded
 
 Copy vendor.xml to the device tree overlays dir, example device/google/$DEVICE/overlay/packages/apps/CarrierConfig/res/xml/vendor.xml
+
 In some cases that path may not be the right one, use device/google/\<device-family-common-name\>/$DEVICE/overlay/packages/apps/CarrierConfig/res/xml/vendor.xml and an example is [here](https://github.com/GrapheneOS/device_google_redfin/commit/c82eb636cd063066199b920dca0a328c915adfa3https://github.com/GrapheneOS/device_google_redfin/commit/c82eb636cd063066199b920dca0a328c915adfa3)
 
 ## Protobuf definitions
